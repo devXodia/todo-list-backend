@@ -135,4 +135,5 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 deploy.sh
+.gitignore
 todolistbackend/db.sqlite3
