@@ -25,7 +25,13 @@ SECRET_KEY = "django-insecure-xgtha1ytliimx@8+-+2&ie3hg(v^%3awnqf*ug0hx%dkpw=j2z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost:4200", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "localhost:4200",
+    "localhost",
+    "127.0.0.1",
+    "http://localhost:4200",
+    "http://127.0.0.1:8000/login/",
+]
 
 
 # Application definition
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "todolist",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",  # your Angular frontend URL
 ]
 
 ROOT_URLCONF = "todolistbackend.urls"
