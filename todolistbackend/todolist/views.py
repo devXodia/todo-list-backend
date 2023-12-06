@@ -22,7 +22,7 @@ class LoginView(ObtainAuthToken):
 
 
 class TodoItemView(APIView):
-    # authentication_classes = [TokenAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
